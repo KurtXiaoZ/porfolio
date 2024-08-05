@@ -1,0 +1,40 @@
+.firstLine {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 80px;
+	margin-top: 79px;
+}
+
+.firstLineName {
+	width: 300px;
+}
+
+.firstLineItem1 {
+	margin-right: 38px;
+}
+
+.firstLineItem2 {
+	margin-right: 50px;
+}
+
+.firstLineItem3 {
+	margin-right: 50px;
+	color: rgba(0, 0, 0, 1);
+	font-size: 32px;
+}
+
+.secondLine {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.secondLineItem1 {
+	color: rgba(0, 0, 0, 1);
+	font-size: 32px;
+	font-weight: 400;
+	margin-right: 25px;
+}

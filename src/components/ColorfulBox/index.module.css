@@ -1,0 +1,23 @@
+.colorfulBox {
+	font-family: 'DM Mono';
+	position: relative;
+	background: #f2f1fd;
+	border-radius: 12px;
+	padding: 20px;
+	font-size: 32px;
+}
+
+.note {
+	position: absolute;
+	left: 0;
+	top: -8px;
+	transform: translateY(-100%);
+	color: #696969;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.content {
+	font-weight: 500;
+	color: #9437ff;
+}
