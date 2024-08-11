@@ -7,6 +7,7 @@ import { Layout1 } from './Layout1';
 import { Layout2 } from './Layout2';
 import { useRef } from 'react';
 import { Easing, Tween } from '@tweenjs/tween.js';
+import { LANDING_PAGE_ABOUT } from '../../lib/constants';
 
 export const Home = () => {
 	const { width } = useWindowSize();
@@ -14,13 +15,7 @@ export const Home = () => {
 
 	const getLayout = () => {
 		if (width >= 1400) return <Layout1 />;
-		return <Layout2 />;
-	};
-
-	const getWorkPagePaddingLeftRight = () => {
-		if (width >= 1200) return '180px';
-		else if (width >= 900) return '100px';
-		else return '60px';
+		return <Layout1 />;
 	};
 
 	const getFootnoteFontSize = () => {
@@ -31,7 +26,7 @@ export const Home = () => {
 	const onBrowseWork = () => {
 		if (!landingPageRef.current) return;
 		let animationId = -1;
-		const tween = new Tween({ scrollTop: 0 })
+		const tween = new Tween({ scrollTop: window.scrollY })
 			.to({ scrollTop: landingPageRef.current?.getBoundingClientRect().height }, 500)
 			.easing(Easing.Quadratic.In)
 			.onUpdate(({ scrollTop }) => {
@@ -50,24 +45,19 @@ export const Home = () => {
 
 	return (
 		<div className={styles.home}>
-			<div
-				ref={landingPageRef}
-				className={cls(styles.landingPage, {
-					[styles.paddingLeftRight]: width < 700,
-				})}
-			>
+			<div className={styles.backgroundImage} />
+			<div ref={landingPageRef} className={cls(styles.landingPage)}>
 				{getLayout()}
+				<div className={styles.about}>{LANDING_PAGE_ABOUT}</div>
+				<div className={styles.links}>
+					<div className={styles.link}>Email</div>
+					<div className={styles.link}>Linkedin</div>
+				</div>
 				<div className={styles.browseProjectsPrompt}>
 					<BrowseWorkPrompt onClick={onBrowseWork} />
 				</div>
 			</div>
-			<div
-				className={styles.workPage}
-				style={{
-					paddingLeft: getWorkPagePaddingLeftRight(),
-					paddingRight: getWorkPagePaddingLeftRight(),
-				}}
-			>
+			<div className={styles.workPage}>
 				<Work
 					backgroundColor="rgba(229, 224, 255, 1)"
 					title="Wayfarer AI"

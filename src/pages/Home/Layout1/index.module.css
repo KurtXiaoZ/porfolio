@@ -1,40 +1,38 @@
-.firstLine {
+.row {
 	width: 100%;
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	margin-bottom: 80px;
-	margin-top: 79px;
+	margin-bottom: 52px;
 }
 
-.firstLineName {
-	width: 300px;
+.leftColumn {
+	margin-right: 45px;
+	width: 40%;
 }
 
-.firstLineItem1 {
-	margin-right: 38px;
-}
-
-.firstLineItem2 {
-	margin-right: 50px;
-}
-
-.firstLineItem3 {
-	margin-right: 50px;
-	color: rgba(0, 0, 0, 1);
-	font-size: 32px;
-}
-
-.secondLine {
+.prompt {
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
+	text-align: left;
+	font-size: 28px;
+	font-style: italic;
+	font-weight: 700;
+	margin-bottom: 24px;
 }
 
-.secondLineItem1 {
-	color: rgba(0, 0, 0, 1);
-	font-size: 32px;
-	font-weight: 400;
-	margin-right: 25px;
+.bluePrompt {
+	color: rgba(19, 102, 255, 1);
+}
+
+.name {
+	width: 40%;
+}
+
+.role {
+	color: rgba(239, 84, 0, 1);
+	width: 40%;
+}
+
+.do {
+	color: rgba(164, 0, 234, 1);
+	width: 0;
+	flex-grow: 1;
 }

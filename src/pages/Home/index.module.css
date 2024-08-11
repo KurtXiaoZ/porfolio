@@ -1,16 +1,30 @@
 .home {
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	overflow-y: auto;
+	background-color: rgba(255, 254, 248, 1);
+	position: relative;
+	padding: 0 10%;
+}
+
+.backgroundImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-image: url('/public/images//home_background.png');
+	opacity: 0.1;
+	pointer-events: none;
 }
 
 .landingPage {
 	box-sizing: border-box;
-	width: fit-content;
-	max-width: 100%;
+	width: 90%;
+	max-width: 1200px;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -20,9 +34,41 @@
 	position: relative;
 }
 
-.paddingLeftRight {
-	padding-left: 50px;
-	padding-right: 50px;
+.line {
+	display: flex;
+	align-items: center;
+}
+
+.lineTitle {
+	font-size: 32px;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.about {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 55px;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgba(19, 102, 255, 1);
+	margin-bottom: 30px;
+}
+
+.links {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgba(19, 102, 255, 1);
+	gap: 25px;
+}
+
+.link {
+	cursor: pointer;
+	border-bottom: 1px solid rgba(19, 102, 255, 1);
 }
 
 .browseProjectsPrompt {
@@ -36,6 +82,7 @@
 
 .workPage {
 	width: 100%;
+	max-width: 1440px;
 	padding-top: 193px;
 	padding-bottom: 337px;
 }

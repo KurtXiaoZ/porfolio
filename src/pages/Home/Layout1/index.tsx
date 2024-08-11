@@ -1,43 +1,30 @@
 import cls from 'classnames';
-import { ColorfulBox } from '../../../components/ColorfulBox';
 import styles from './index.module.css';
-import { ColorfulBoxDropdown } from '../../../components/ColorfulBoxDropdown';
+import { NameBox } from '../../../components/NameBox';
+import { Dropdown } from '../../../components/Dropdown';
+import { DO_OPTIONS, ROLE_OPTIONS } from '../../../lib/constants';
 
 export const Layout1 = () => {
 	return (
 		<>
-			<div className={styles.firstLine}>
-				<ColorfulBox
-					className={cls(
-						styles.firstLineItem,
-						styles.firstLineItem1,
-						styles.firstLineName,
-					)}
+			<div className={cls(styles.prompt, styles.bluePrompt)}>Hello! My name is...</div>
+			<div className={styles.row}>
+				<NameBox
 					note="First name"
-					content="Sophia"
+					name="Sophia"
+					className={cls(styles.name, styles.leftColumn)}
 				/>
-				<ColorfulBox
-					className={cls(
-						styles.firstLineItem,
-						styles.firstLineItem2,
-						styles.firstLineName,
-					)}
-					note="Last name"
-					content="Liu"
-				/>
-				<span className={styles.firstLineItem3}>is a</span>
-				<ColorfulBoxDropdown
-					className={cls(styles.firstLineItem, styles.firstLineItem4)}
-					note="My role"
-					content="Product Designer"
-				/>
+				<NameBox note="Last name" name="Liu" className={styles.name} />
 			</div>
-			<div className={styles.secondLine}>
-				<span className={styles.secondLineItem1}>who</span>
-				<ColorfulBoxDropdown
-					note="What I do"
-					content="advocates for user-centered design"
-				/>
+			<div className={styles.row}>
+				<div className={cls(styles.role, styles.leftColumn)}>
+					<div className={cls(styles.prompt)}>I am a...</div>
+					<Dropdown note="My role" options={ROLE_OPTIONS} theme="orange" />
+				</div>
+				<div className={styles.do}>
+					<div className={cls(styles.prompt)}>who...</div>
+					<Dropdown note="What I do" options={DO_OPTIONS} theme="purple" />
+				</div>
 			</div>
 		</>
 	);
