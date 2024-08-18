@@ -15,7 +15,7 @@ export const Home = () => {
 
 	const getLayout = () => {
 		if (width >= 800) return <Layout1 />;
-		return <Layout1 />;
+		return <Layout2 />;
 	};
 
 	const getFootnoteFontSize = () => {

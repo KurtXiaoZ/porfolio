@@ -5,15 +5,16 @@
 .note {
 	font-weight: 500;
 	color: rgba(105, 105, 105, 1);
-	margin-bottom: 15px;
 }
 
 .note.default {
 	font-size: 14px;
+	margin-bottom: 15px;
 }
 
 .note.small {
 	font-size: 14px;
+	margin-bottom: 12px;
 }
 
 .name {

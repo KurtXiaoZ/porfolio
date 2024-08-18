@@ -23,7 +23,7 @@ export const Layout1 = () => {
 				/>
 				<NameBox note="Last name" name="Liu" className={styles.name} size={getSize()} />
 			</div>
-			<div className={styles.row}>
+			<div className={cls(styles.row, styles.lastRow)}>
 				<div className={cls(styles.role, styles.leftColumn)}>
 					<div className={cls(styles.prompt)}>I am a...</div>
 					<Dropdown

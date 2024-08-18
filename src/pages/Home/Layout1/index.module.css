@@ -1,7 +1,11 @@
 .row {
 	width: 100%;
 	display: flex;
-	margin-bottom: 52px;
+	margin-bottom: 45px;
+}
+
+.row.lastRow {
+	margin-bottom: 65px;
 }
 
 .leftColumn {

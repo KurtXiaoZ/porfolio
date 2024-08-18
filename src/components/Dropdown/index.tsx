@@ -14,6 +14,7 @@ export type DropdownProps = {
 	note: string;
 	theme: 'orange' | 'purple';
 	size?: 'default' | 'large' | 'small';
+	dropdownZIndex?: number;
 };
 
 const getDisplayedOptions = (options: DropdownOption[], selectedOption: DropdownOption) => {
@@ -25,7 +26,14 @@ const getDisplayedOptions = (options: DropdownOption[], selectedOption: Dropdown
 };
 
 export const Dropdown = (props: DropdownProps) => {
-	const { className, options: propOptions, note, theme, size = 'default' } = props ?? {};
+	const {
+		className,
+		options: propOptions,
+		note,
+		theme,
+		size = 'default',
+		dropdownZIndex = 0,
+	} = props ?? {};
 	const [selectedOption, setSelectedOption] = useState<DropdownOption>(propOptions[0]);
 	const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 	const displayedOptions = getDisplayedOptions(propOptions, selectedOption);
@@ -65,7 +73,11 @@ export const Dropdown = (props: DropdownProps) => {
 					})}
 				/>
 				{isDropdownOpen && (
-					<div className={cls(styles.options, styles[size])} ref={dropdownRef}>
+					<div
+						className={cls(styles.options, styles[size])}
+						ref={dropdownRef}
+						style={{ zIndex: dropdownZIndex }}
+					>
 						{displayedOptions.map(({ label, value }) => (
 							<div
 								className={cls(styles.option, styles[size], styles[theme])}
