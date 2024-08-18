@@ -1,6 +1,6 @@
 import cls from 'classnames';
 import styles from './index.module.css';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Arrow from '../../../public/svgs/dropdown.svg';
 
 export type DropdownOption = {
@@ -13,6 +13,7 @@ export type DropdownProps = {
 	options: DropdownOption[];
 	note: string;
 	theme: 'orange' | 'purple';
+	size?: 'default' | 'large' | 'small';
 };
 
 const getDisplayedOptions = (options: DropdownOption[], selectedOption: DropdownOption) => {
@@ -24,19 +25,37 @@ const getDisplayedOptions = (options: DropdownOption[], selectedOption: Dropdown
 };
 
 export const Dropdown = (props: DropdownProps) => {
-	const { className, options: propOptions, note, theme } = props ?? {};
+	const { className, options: propOptions, note, theme, size = 'default' } = props ?? {};
 	const [selectedOption, setSelectedOption] = useState<DropdownOption>(propOptions[0]);
 	const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 	const displayedOptions = getDisplayedOptions(propOptions, selectedOption);
+	const selectedRef = useRef<HTMLDivElement>(null);
+	const dropdownRef = useRef<HTMLDivElement>(null);
+
+	const handleClickOutside = (e: MouseEvent) => {
+		if (
+			!selectedRef.current?.contains(e.target as any) &&
+			!dropdownRef.current?.contains(e.target as any)
+		) {
+			setIsDropdownOpen(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener('click', handleClickOutside);
+
+		return () => window.removeEventListener('click', handleClickOutside);
+	}, []);
 
 	return (
 		<div className={cls(styles.dropdown, className)}>
-			<div className={styles.note}>{note}</div>
+			<div className={cls(styles.note, styles[size])}>{note}</div>
 			<div
-				className={cls(styles.selected, styles[theme], {
+				className={cls(styles.selected, styles[size], styles[theme], {
 					[styles.isDropdownOpen]: isDropdownOpen,
 				})}
 				onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+				ref={selectedRef}
 			>
 				<div className={styles.label}>{selectedOption.label}</div>
 				<img
@@ -46,10 +65,10 @@ export const Dropdown = (props: DropdownProps) => {
 					})}
 				/>
 				{isDropdownOpen && (
-					<div className={styles.options}>
+					<div className={cls(styles.options, styles[size])} ref={dropdownRef}>
 						{displayedOptions.map(({ label, value }) => (
 							<div
-								className={cls(styles.option, styles[theme])}
+								className={cls(styles.option, styles[size], styles[theme])}
 								onClick={() => {
 									setSelectedOption({ label, value });
 									setIsDropdownOpen(false);

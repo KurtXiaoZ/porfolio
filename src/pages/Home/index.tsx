@@ -14,7 +14,7 @@ export const Home = () => {
 	const landingPageRef = useRef<HTMLDivElement>(null);
 
 	const getLayout = () => {
-		if (width >= 1400) return <Layout1 />;
+		if (width >= 800) return <Layout1 />;
 		return <Layout1 />;
 	};
 

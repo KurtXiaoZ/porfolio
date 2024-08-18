@@ -5,15 +5,16 @@ export type NameBoxProps = {
 	name: string;
 	note: string;
 	className?: string;
+	size?: 'default' | 'large' | 'small';
 };
 
 export const NameBox = (props: NameBoxProps) => {
-	const { name, note, className } = props ?? {};
+	const { name, note, className, size = 'default' } = props ?? {};
 
 	return (
 		<div className={cls(styles.nameBox, className)}>
-			<div className={styles.note}>{note}</div>
-			<div className={styles.name}>{name}</div>
+			<div className={cls(styles.note, styles[size])}>{note}</div>
+			<div className={cls(styles.name, styles[size])}>{name}</div>
 		</div>
 	);
 };
