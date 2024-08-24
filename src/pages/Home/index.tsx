@@ -23,6 +23,16 @@ export const Home = () => {
 		else return '20px';
 	};
 
+	const getAboutFootSize = () => {
+		if (width >= 1000) return '20px';
+		else return '16px';
+	};
+
+	const getLinkFontSize = () => {
+		if (width >= 1000) return '20px';
+		else return '16px';
+	};
+
 	const onBrowseWork = () => {
 		if (!landingPageRef.current) return;
 		let animationId = -1;
@@ -48,10 +58,31 @@ export const Home = () => {
 			<div className={styles.backgroundImage} />
 			<div ref={landingPageRef} className={cls(styles.landingPage)}>
 				{getLayout()}
-				<div className={styles.about}>{LANDING_PAGE_ABOUT}</div>
+				<div
+					className={styles.about}
+					style={{
+						fontSize: getAboutFootSize(),
+					}}
+				>
+					{LANDING_PAGE_ABOUT}
+				</div>
 				<div className={styles.links}>
-					<div className={styles.link}>Email</div>
-					<div className={styles.link}>Linkedin</div>
+					<div
+						className={styles.link}
+						style={{
+							fontSize: getLinkFontSize(),
+						}}
+					>
+						Email
+					</div>
+					<div
+						className={styles.link}
+						style={{
+							fontSize: getLinkFontSize(),
+						}}
+					>
+						Linkedin
+					</div>
 				</div>
 				<div className={styles.browseProjectsPrompt}>
 					<BrowseWorkPrompt onClick={onBrowseWork} />

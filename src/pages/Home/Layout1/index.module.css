@@ -16,10 +16,18 @@
 .prompt {
 	width: 100%;
 	text-align: left;
-	font-size: 28px;
 	font-style: italic;
 	font-weight: 700;
+}
+
+.prompt.default {
+	font-size: 28px;
 	margin-bottom: 24px;
+}
+
+.prompt.small {
+	font-size: 24px;
+	margin-bottom: 20px;
 }
 
 .bluePrompt {

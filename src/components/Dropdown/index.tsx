@@ -13,7 +13,7 @@ export type DropdownProps = {
 	options: DropdownOption[];
 	note: string;
 	theme: 'orange' | 'purple';
-	size?: 'default' | 'large' | 'small';
+	size?: 'default' | 'large' | 'small' | 'smallVertical';
 	dropdownZIndex?: number;
 };
 

@@ -5,7 +5,7 @@ export type NameBoxProps = {
 	name: string;
 	note: string;
 	className?: string;
-	size?: 'default' | 'large' | 'small';
+	size?: 'default' | 'large' | 'small' | 'smallVertical';
 };
 
 export const NameBox = (props: NameBoxProps) => {

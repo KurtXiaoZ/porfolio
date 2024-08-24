@@ -13,7 +13,9 @@ export const Layout1 = () => {
 	};
 	return (
 		<>
-			<div className={cls(styles.prompt, styles.bluePrompt)}>Hello! My name is...</div>
+			<div className={cls(styles.prompt, styles.bluePrompt, styles[getSize()])}>
+				Hello! My name is...
+			</div>
 			<div className={styles.row}>
 				<NameBox
 					note="First name"
@@ -25,7 +27,7 @@ export const Layout1 = () => {
 			</div>
 			<div className={cls(styles.row, styles.lastRow)}>
 				<div className={cls(styles.role, styles.leftColumn)}>
-					<div className={cls(styles.prompt)}>I am a...</div>
+					<div className={cls(styles.prompt, styles[getSize()])}>I am a...</div>
 					<Dropdown
 						note="My role"
 						options={ROLE_OPTIONS}
@@ -34,7 +36,7 @@ export const Layout1 = () => {
 					/>
 				</div>
 				<div className={styles.do}>
-					<div className={cls(styles.prompt)}>who...</div>
+					<div className={cls(styles.prompt, styles[getSize()])}>who...</div>
 					<Dropdown
 						note="What I do"
 						options={DO_OPTIONS}

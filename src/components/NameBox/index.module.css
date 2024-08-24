@@ -17,6 +17,11 @@
 	margin-bottom: 12px;
 }
 
+.note.smallVertical {
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
 .name {
 	font-family: Lato;
 	font-size: 28px;
@@ -39,5 +44,10 @@
 
 .name.small {
 	font-size: 24px;
-	height: 80px;
+	height: 70px;
+}
+
+.name.smallVertical {
+	font-size: 24px;
+	height: 60px;
 }
