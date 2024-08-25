@@ -15,6 +15,12 @@
 	font-size: 16px !important;
 }
 
-.arrow {
+.arrow.default {
 	margin-top: 24px;
+	width: 51px;
+}
+
+.arrow.small {
+	margin-top: 18px;
+	width: 32px;
 }

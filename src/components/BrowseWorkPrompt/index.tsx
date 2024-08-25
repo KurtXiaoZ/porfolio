@@ -19,7 +19,10 @@ export const BrowseWorkPrompt = (props: BrowseWorkPromptProps) => {
 	return (
 		<div className={styles.prompt} onClick={onClick}>
 			<div className={cls(styles.text, styles[getSize()])}>Browse my work</div>
-			<img src={'./svgs/BrowseWorkPromptArrow.svg'} className={styles.arrow} />
+			<img
+				src={'./svgs/BrowseWorkPromptArrow.svg'}
+				className={cls(styles.arrow, styles[getSize()])}
+			/>
 		</div>
 	);
 };

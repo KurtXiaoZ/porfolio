@@ -30,8 +30,16 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 62px;
+	padding-bottom: 30px;
 	position: relative;
+}
+
+.landingPage.defaultPaddingTop {
+	padding-top: 130px;
+}
+
+.landingPage.smallPaddingTop {
+	padding-top: 100px;
 }
 
 .line {
@@ -70,8 +78,6 @@
 }
 
 .browseProjectsPrompt {
-	position: absolute;
-	bottom: 37px;
 	width: 100%;
 	display: flex;
 	justify-content: center;

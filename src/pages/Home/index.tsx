@@ -56,7 +56,13 @@ export const Home = () => {
 	return (
 		<div className={styles.home}>
 			<div className={styles.backgroundImage} />
-			<div ref={landingPageRef} className={cls(styles.landingPage)}>
+			<div
+				ref={landingPageRef}
+				className={cls(
+					styles.landingPage,
+					width >= 800 ? styles.defaultPaddingTop : styles.smallPaddingTop,
+				)}
+			>
 				{getLayout()}
 				<div
 					className={styles.about}
