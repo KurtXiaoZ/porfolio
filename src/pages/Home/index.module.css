@@ -16,7 +16,7 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-image: url('/public/images//home_background.png');
+	background-image: url('https://kurtxiaoz.github.io/porfolio/svgs/home_background.png');
 	opacity: 0.1;
 	pointer-events: none;
 }
